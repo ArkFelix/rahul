@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+import SearchBar from '../components/SearchBar';
+import GifGallery from '../components/GifGallery';
+
+const Home = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Function to handle the search term update
+    const handleSearch = (newSearchTerm) => {
+        setSearchTerm(newSearchTerm);
+    };
+
+    return (
+        <div>
+            <h1>GIF Search App</h1>
+            <SearchBar onSearch={handleSearch} />
+            <GifGallery searchTerm={searchTerm} />
+        </div>
+    );
+};
+
+export default Home;
